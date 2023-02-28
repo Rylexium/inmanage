@@ -1,5 +1,6 @@
-package com.example.inmanage
+package com.example.inmanage.authorization
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.Button
@@ -7,6 +8,8 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.inmanage.R
+import com.example.inmanage.cabinet.assets.AssetsActivity
 import com.example.inmanage.utils.HideKeyboardClass
 
 
@@ -20,12 +23,13 @@ class AuthorizationActivity : AppCompatActivity() {
         setContentView(R.layout.authorization_main)
         initComponents()
         applyEvents()
+        startActivity(Intent(this, AssetsActivity::class.java))
     }
 
     private fun applyEvents() {
         buttonLogin.setOnClickListener {
             if(fieldLogin.text.toString() == "admin" && fieldPassword.text.toString() == "123")
-                Toast.makeText(this, "Вы вошли", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, AssetsActivity::class.java))
         }
     }
 
