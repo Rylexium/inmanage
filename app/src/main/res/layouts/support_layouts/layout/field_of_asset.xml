@@ -40,7 +40,6 @@
                 android:id="@+id/description_image"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_import_export_24"
                 android:layout_weight="0.25" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
