@@ -55,7 +55,7 @@ class AssetsAdapter(
             }
         }
         holder.fieldOfAsset.setOnClickListener {
-            newList.eventAfterClick
+            newList.eventAfterClick()
         }
 
     }

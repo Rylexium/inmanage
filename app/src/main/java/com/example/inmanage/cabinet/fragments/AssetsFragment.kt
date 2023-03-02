@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.inmanage.R
 import com.example.inmanage.cabinet.adapters.AssetsAdapter
 import com.example.inmanage.cabinet.model.AssetData
 import com.example.inmanage.databinding.FragmentAssetsBinding
+import com.example.inmanage.utils.ShowToast
 
 class AssetsFragment : Fragment() {
     private var _binding: FragmentAssetsBinding? = null
@@ -33,12 +35,24 @@ class AssetsFragment : Fragment() {
 
     private fun initComponents() {
         val lisfOfAssets = mutableListOf(
-            AssetData("Общее", R.drawable.asset_transport, {}),
-            AssetData("Недвижимость", R.drawable.asset_transport, {}),
-            AssetData("Транспорт", R.drawable.asset_transport, {}),
-            AssetData("Бизнес", R.drawable.asset_transport, {}),
-            AssetData("Акции", R.drawable.asset_transport, {}),
-            AssetData("Облигации", R.drawable.asset_transport, {})
+            AssetData("Общее", R.drawable.asset_statistics, {
+                ShowToast.show(this.activity, "Вы выбрали \"Общее\"")
+            }),
+            AssetData("Недвижимость", R.drawable.asset_immovables, {
+                ShowToast.show(this.activity, "Вы выбрали \"Недвижимость\"")
+            }),
+            AssetData("Транспорт", R.drawable.asset_transport, {
+                ShowToast.show(this.activity, "Вы выбрали \"Транспорт\"")
+            }),
+            AssetData("Бизнес", R.drawable.asset_business, {
+                ShowToast.show(this.activity, "Вы выбрали \"Бизнес\"")
+            }),
+            AssetData("Акции", R.drawable.asset_promotion, {
+                ShowToast.show(this.activity, "Вы выбрали \"Акции\"")
+            }),
+            AssetData("Облигации", R.drawable.asset_bonds, {
+                ShowToast.show(this.activity, "Вы выбрали \"Облигации\"")
+            })
         )
         binding.recyclerViewAssets.adapter = AssetsAdapter(this, lisfOfAssets)
         binding.recyclerViewAssets.layoutManager = LinearLayoutManager(activity)
