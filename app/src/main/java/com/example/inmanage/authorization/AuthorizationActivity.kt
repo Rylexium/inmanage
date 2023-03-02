@@ -6,10 +6,9 @@ import android.view.MotionEvent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inmanage.R
-import com.example.inmanage.cabinet.assets.AssetsActivity
+import com.example.inmanage.cabinet.AssetsActivity
 import com.example.inmanage.utils.HideKeyboardClass
 
 

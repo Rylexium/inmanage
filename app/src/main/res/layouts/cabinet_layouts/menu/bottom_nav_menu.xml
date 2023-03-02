@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/button_reports"
+        android:title="Отчёты"
+        android:icon="@drawable/ic_baseline_feed_24"
+        >
+    </item>
+    <item
+        android:id="@+id/button_balance"
+        android:title="Бух.Баланс"
+        android:icon="@drawable/ic_baseline_feed_24"
+        >
+    </item>
+    <item
+        android:id="@+id/button_scheduler"
+        android:title="Планировщик"
+        android:icon="@drawable/ic_baseline_legend_toggle_24"
+        >
+    </item>
+    <item
+        android:id="@+id/button_profile"
+        android:title="Профиль"
+        android:icon="@drawable/ic_baseline_person_outline_24"
+        >
+    </item>
+</menu>

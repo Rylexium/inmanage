@@ -13,8 +13,7 @@
         android:theme="@style/Theme.InManage"
         tools:targetApi="31">
         <activity
-            android:name=".cabinet.assets.AssetsActivity"
-            android:screenOrientation="portrait"
+            android:name=".cabinet.AssetsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -22,8 +21,8 @@
         </activity>
         <activity
             android:name=".authorization.AuthorizationActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
