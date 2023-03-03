@@ -22,7 +22,7 @@ class AssetsActivity : AppCompatActivity() {
     private lateinit var textInTitleAssets : TextView
 
     private var fragments = listOf(AssetsFragment())
-    private val listOfAssets = mutableListOf("Баланс", "Активы", "Пассивы", "Отчёты", "Планировщик")
+    private val listOfAssets = mutableListOf("Баланс", "Активы", "Пассивы")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
