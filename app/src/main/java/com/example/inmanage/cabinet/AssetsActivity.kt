@@ -1,5 +1,6 @@
 package com.example.inmanage.cabinet
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -53,6 +54,7 @@ class AssetsActivity : AppCompatActivity() {
 
     private fun applyEvents() {
         bottomNavigationBar.setOnNavigationItemSelectedListener  {
+            it.isChecked = true
             when (it.itemId) {
                 R.id.button_reports -> {
                     replaceFragment(fragments[0])
@@ -81,7 +83,8 @@ class AssetsActivity : AppCompatActivity() {
             spinner.adapter = adapter
             spinner.onItemClickListener =
                 AdapterView.OnItemClickListener { parent, view, position, id ->
-                    textInTitleAssets.text = listOfAssets[position]
+                    if(listOfAssets[position] == "Баланс")
+                        startActivity(Intent(this, BalancActivity::class.java))
                     dialog.dismiss()
                 }
         }
