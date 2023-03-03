@@ -22,7 +22,7 @@ class AuthorizationActivity : AppCompatActivity() {
         setContentView(R.layout.authorization_main)
         initComponents()
         applyEvents()
-        //startActivity(Intent(this, AssetsActivity::class.java))
+        startActivity(Intent(this, AssetsActivity::class.java))
     }
 
     private fun applyEvents() {

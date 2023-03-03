@@ -12,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.inmanage.R
 import com.example.inmanage.cabinet.fragments.AssetsFragment
+import com.example.inmanage.cabinet.fragments.ProfileFragment
+import com.example.inmanage.cabinet.fragments.ReportsFragment
+import com.example.inmanage.cabinet.fragments.SchedulerFragment
 import com.example.inmanage.utils.HideKeyboardClass
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -21,7 +24,7 @@ class AssetsActivity : AppCompatActivity() {
     private lateinit var iconInTitleAssets : View
     private lateinit var textInTitleAssets : TextView
 
-    private var fragments = listOf(AssetsFragment())
+    private var fragments = listOf(ReportsFragment(), AssetsFragment(), SchedulerFragment(), ProfileFragment())
     private val listOfAssets = mutableListOf("Баланс", "Активы", "Пассивы")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +32,7 @@ class AssetsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_assets)
         initComponents()
         applyEvents()
-        replaceFragment(fragments[0])
+        replaceFragment(fragments[1])
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
@@ -49,22 +52,22 @@ class AssetsActivity : AppCompatActivity() {
     }
 
     private fun applyEvents() {
-        bottomNavigationBar.setOnItemReselectedListener {
+        bottomNavigationBar.setOnNavigationItemSelectedListener  {
             when (it.itemId) {
                 R.id.button_reports -> {
-                    bottomNavigationBar.menu.getItem(0).isChecked = true
-                }
-                R.id.button_balance -> {
-                    bottomNavigationBar.menu.getItem(1).isChecked = true
                     replaceFragment(fragments[0])
                 }
+                R.id.button_balance -> {
+                    replaceFragment(fragments[1])
+                }
                 R.id.button_scheduler -> {
-                    bottomNavigationBar.menu.getItem(2).isChecked = true
+                    replaceFragment(fragments[2])
                 }
                 R.id.button_profile -> {
-                    bottomNavigationBar.menu.getItem(3).isChecked = true
+                    replaceFragment(fragments[3])
                 }
             }
+            false
         }
         iconInTitleAssets.setOnClickListener {
             val spinner = ListView(this)
