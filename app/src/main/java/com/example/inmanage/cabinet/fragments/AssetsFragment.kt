@@ -5,16 +5,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.inmanage.R
 import com.example.inmanage.R.drawable.asset_promotion
+import com.example.inmanage.cabinet.CabinetActivity
 import com.example.inmanage.cabinet.adapters.AssetsAdapter
-import com.example.inmanage.cabinet.list.PropertyActivity
-import com.example.inmanage.cabinet.list.StatisticsActivity
+import com.example.inmanage.cabinet.list.MainListActivity
+import com.example.inmanage.cabinet.list.PropertyFragment
 import com.example.inmanage.cabinet.model.AssetData
 import com.example.inmanage.databinding.FragmentAssetsBinding
+import com.example.inmanage.utils.GlobalVariables
 import com.example.inmanage.utils.ShowToast
 
 class AssetsFragment : Fragment() {
@@ -40,24 +41,34 @@ class AssetsFragment : Fragment() {
     private fun initComponents() {
         val lisfOfAssets = mutableListOf(
             AssetData("Общее", R.drawable.asset_statistics) {
-                ShowToast.show(this.activity, "Вы выбрали \"Общее\"")
-                activity?.startActivity(Intent(activity, StatisticsActivity::class.java))
+                //GlobalVariables.fragment =
+                activity?.startActivity(Intent(activity, MainListActivity::class.java)
+                    .putExtra("title", "Общая статистика:"))
             },
             AssetData("Недвижимость", R.drawable.asset_immovables) {
-                ShowToast.show(this.activity, "Вы выбрали \"Недвижимость\"")
-                activity?.startActivity(Intent(activity, PropertyActivity::class.java))
+                GlobalVariables.fragment = PropertyFragment()
+                activity?.startActivity(Intent(activity, MainListActivity::class.java)
+                    .putExtra("title", "Недвижимость:"))
             },
             AssetData("Транспорт", R.drawable.asset_transport) {
-                ShowToast.show(this.activity, "Вы выбрали \"Транспорт\"")
+                //GlobalVariables.fragment =
+                activity?.startActivity(Intent(activity, MainListActivity::class.java)
+                    .putExtra("title", "Транспорт:"))
             },
             AssetData("Бизнес", R.drawable.asset_business) {
-                ShowToast.show(this.activity, "Вы выбрали \"Бизнес\"")
+                //GlobalVariables.fragment =
+                activity?.startActivity(Intent(activity, MainListActivity::class.java)
+                    .putExtra("title", "Бизнес:"))
             },
             AssetData("Акции", asset_promotion) {
-                ShowToast.show(this.activity, "Вы выбрали \"Акции\"")
+                //GlobalVariables.fragment =
+                activity?.startActivity(Intent(activity, MainListActivity::class.java)
+                    .putExtra("title", "Акции:"))
             },
             AssetData("Облигации", R.drawable.asset_bonds) {
-                ShowToast.show(this.activity, "Вы выбрали \"Облигации\"")
+                //GlobalVariables.fragment =
+                activity?.startActivity(Intent(activity, MainListActivity::class.java)
+                    .putExtra("title", "Облигации:"))
             }
         )
         binding.recyclerViewAssets.adapter = AssetsAdapter(this, lisfOfAssets)

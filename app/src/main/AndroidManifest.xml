@@ -22,7 +22,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".cabinet.list.PropertyActivity"
+            android:name=".cabinet.list.MainListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:exported="false">

@@ -108,7 +108,7 @@ class CabinetActivity : AppCompatActivity() {
             transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
         else
             transaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right)
-        transaction.replace(R.id.fragment_container, fragment)
+        transaction.replace(R.id.fragment_container_cabinet, fragment)
         transaction.commit()
     }
 
