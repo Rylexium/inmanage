@@ -1,5 +1,6 @@
 package com.example.inmanage.cabinet.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.inmanage.R
 import com.example.inmanage.R.drawable.asset_promotion
 import com.example.inmanage.cabinet.adapters.AssetsAdapter
+import com.example.inmanage.cabinet.list.PropertyActivity
 import com.example.inmanage.cabinet.model.AssetData
 import com.example.inmanage.databinding.FragmentAssetsBinding
 import com.example.inmanage.utils.ShowToast
@@ -41,6 +43,7 @@ class AssetsFragment : Fragment() {
             },
             AssetData("Недвижимость", R.drawable.asset_immovables) {
                 ShowToast.show(this.activity, "Вы выбрали \"Недвижимость\"")
+                activity?.startActivity(Intent(activity, PropertyActivity::class.java))
             },
             AssetData("Транспорт", R.drawable.asset_transport) {
                 ShowToast.show(this.activity, "Вы выбрали \"Транспорт\"")

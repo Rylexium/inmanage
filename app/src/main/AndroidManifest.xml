@@ -13,14 +13,18 @@
         android:theme="@style/Theme.InManage"
         tools:targetApi="31">
         <activity
-            android:name=".StatisticsActivity"
+            android:name=".cabinet.list.StatisticsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".PropertyActivity"
+            android:name=".cabinet.list.PropertyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

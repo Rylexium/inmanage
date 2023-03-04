@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="height_bottom_navigation_bar">60sp</dimen>
+    <dimen name="padding_top_bottom_in_cardview_textview">10sp</dimen>
+    <dimen name="padding_start_end_in_cardview_textview">40sp</dimen>
 </resources>
