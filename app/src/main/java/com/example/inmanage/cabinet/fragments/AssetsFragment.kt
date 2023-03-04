@@ -12,6 +12,7 @@ import com.example.inmanage.R
 import com.example.inmanage.R.drawable.asset_promotion
 import com.example.inmanage.cabinet.adapters.AssetsAdapter
 import com.example.inmanage.cabinet.list.PropertyActivity
+import com.example.inmanage.cabinet.list.StatisticsActivity
 import com.example.inmanage.cabinet.model.AssetData
 import com.example.inmanage.databinding.FragmentAssetsBinding
 import com.example.inmanage.utils.ShowToast
@@ -40,6 +41,7 @@ class AssetsFragment : Fragment() {
         val lisfOfAssets = mutableListOf(
             AssetData("Общее", R.drawable.asset_statistics) {
                 ShowToast.show(this.activity, "Вы выбрали \"Общее\"")
+                activity?.startActivity(Intent(activity, StatisticsActivity::class.java))
             },
             AssetData("Недвижимость", R.drawable.asset_immovables) {
                 ShowToast.show(this.activity, "Вы выбрали \"Недвижимость\"")
