@@ -54,25 +54,25 @@ class AssetsFragment : Fragment() {
                 activity?.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             },
             AssetData("Транспорт", R.drawable.asset_transport) {
-                //GlobalVariables.fragment =
+                GlobalVariables.fragment = null
                 activity?.startActivity(Intent(activity, MainListActivity::class.java)
                     .putExtra("title", "Транспорт:"))
                 activity?.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             },
             AssetData("Бизнес", R.drawable.asset_business) {
-                //GlobalVariables.fragment =
+                GlobalVariables.fragment = null
                 activity?.startActivity(Intent(activity, MainListActivity::class.java)
                     .putExtra("title", "Бизнес:"))
                 activity?.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             },
             AssetData("Акции", asset_promotion) {
-                //GlobalVariables.fragment =
+                GlobalVariables.fragment = null
                 activity?.startActivity(Intent(activity, MainListActivity::class.java)
                     .putExtra("title", "Акции:"))
                 activity?.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             },
             AssetData("Облигации", R.drawable.asset_bonds) {
-                //GlobalVariables.fragment =
+                GlobalVariables.fragment = null
                 activity?.startActivity(Intent(activity, MainListActivity::class.java)
                     .putExtra("title", "Облигации:"))
                 activity?.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
