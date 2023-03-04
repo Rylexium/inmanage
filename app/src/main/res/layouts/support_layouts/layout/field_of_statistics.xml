@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:paddingStart="8sp"
+    android:paddingEnd="8dp">
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        android:text="Доход:"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="7dp"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/darkest_grey"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:layout_gravity="center"
+        android:focusable="true"
+        android:layout_marginStart="15sp"
+        >
+        <View
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
+            android:rotation="270"
+            />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.4"
+        android:gravity="right"
+        android:text="150 000 Р"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_gravity="center|right"
+        />
+    
+</LinearLayout>
