@@ -71,10 +71,10 @@ class MainListActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val intent = Intent(this, CabinetActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        intent.putExtra("selectedFragment", selectedFragment)
-        intent.putExtra("selectedItemId", bottomNavigationBar.selectedItemId)
-        startActivity(intent)
+        GlobalVariables.selectedFragment = selectedFragment
+        GlobalVariables.selectedItemId = bottomNavigationBar.selectedItemId
+
+        super.onBackPressed()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 }

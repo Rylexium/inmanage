@@ -21,6 +21,7 @@ import com.example.inmanage.cabinet.fragments.SchedulerFragment
 import com.example.inmanage.cabinet.title.AssetsActivity
 import com.example.inmanage.cabinet.title.BalanceActivity
 import com.example.inmanage.cabinet.title.LiabilitiesActivity
+import com.example.inmanage.utils.GlobalVariables
 import com.example.inmanage.utils.HideKeyboardClass
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -73,19 +74,21 @@ class CabinetActivity : AppCompatActivity() {
         textInTitleAssets = findViewById(R.id.text_in_title_assets)
 
         bottomNavigationBar = findViewById(R.id.bottom_navigation)
+    }
 
-        pastIndex = intent.getIntExtra("selectedFragment", 1)
-        val selectedItem = intent.getIntExtra("selectedItemId", -1)
+    override fun onResume() {
+        super.onResume()
+        pastIndex = GlobalVariables.selectedFragment
+        val selectedItem = GlobalVariables.selectedItemId
         if(pastIndex != 1 && selectedItem != -1) { //не впервый запустили
             bottomNavigationBar.selectedItemId = R.id.button_balance
-            replaceFragment(fragments[pastIndex], pastIndex, 1)
+            replaceFragment(fragments[pastIndex], pastIndex, pastIndex)
             bottomNavigationBar.selectedItemId = selectedItem
         }
         else { //впервые запустили идём сюда
             replaceFragment(fragments[pastIndex], pastIndex, 0)
             bottomNavigationBar.selectedItemId = R.id.button_balance
         }
-
     }
 
     private fun applyEvents() {
@@ -136,10 +139,12 @@ class CabinetActivity : AppCompatActivity() {
 
     private fun replaceFragment(fragment: Fragment, pastIndex : Int, previousIndex : Int){
         val transaction = supportFragmentManager.beginTransaction()
+
         if(pastIndex < previousIndex)
             transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
-        else
+        else if(pastIndex > previousIndex)
             transaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right)
+
         transaction.replace(R.id.fragment_container_cabinet, fragment)
         transaction.commit()
     }
