@@ -1,5 +1,6 @@
 package com.example.inmanage.cabinet
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
@@ -12,13 +13,13 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.inmanage.R
-import com.example.inmanage.cabinet.title.AssetsActivity
-import com.example.inmanage.cabinet.title.BalanceActivity
-import com.example.inmanage.cabinet.title.LiabilitiesActivity
 import com.example.inmanage.cabinet.fragments.AssetsFragment
 import com.example.inmanage.cabinet.fragments.ProfileFragment
 import com.example.inmanage.cabinet.fragments.ReportsFragment
 import com.example.inmanage.cabinet.fragments.SchedulerFragment
+import com.example.inmanage.cabinet.title.AssetsActivity
+import com.example.inmanage.cabinet.title.BalanceActivity
+import com.example.inmanage.cabinet.title.LiabilitiesActivity
 import com.example.inmanage.utils.HideKeyboardClass
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -45,6 +46,20 @@ class CabinetActivity : AppCompatActivity() {
             currentFocus!!.clearFocus()
         }
         return super.dispatchTouchEvent(ev)
+    }
+    override fun onBackPressed() {
+        val dialogClickListener =
+            DialogInterface.OnClickListener { _, which ->
+                when (which) {
+                    DialogInterface.BUTTON_POSITIVE -> { super.onBackPressed() }
+                    DialogInterface.BUTTON_NEGATIVE -> {}
+                }
+            }
+
+        AlertDialog.Builder(this).setMessage("Вы действительно хотите выйти?")
+            .setPositiveButton("Да", dialogClickListener)
+            .setNegativeButton("Нет", dialogClickListener)
+            .show();
     }
 
     private fun initComponents() {
