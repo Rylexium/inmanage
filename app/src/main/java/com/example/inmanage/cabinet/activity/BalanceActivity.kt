@@ -1,12 +1,12 @@
-package com.example.inmanage.cabinet
+package com.example.inmanage.cabinet.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.inmanage.R
 
-class BalancActivity : AppCompatActivity() {
+class BalanceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_balanc)
+        setContentView(R.layout.activity_balance)
     }
 }

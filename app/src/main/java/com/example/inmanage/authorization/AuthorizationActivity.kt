@@ -8,7 +8,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inmanage.R
-import com.example.inmanage.cabinet.AssetsActivity
+import com.example.inmanage.cabinet.CabinetActivity
 import com.example.inmanage.utils.HideKeyboardClass
 
 
@@ -22,13 +22,13 @@ class AuthorizationActivity : AppCompatActivity() {
         setContentView(R.layout.authorization_main)
         initComponents()
         applyEvents()
-        startActivity(Intent(this, AssetsActivity::class.java))
+        startActivity(Intent(this, CabinetActivity::class.java))
     }
 
     private fun applyEvents() {
         buttonLogin.setOnClickListener {
             if(fieldLogin.text.toString() == "admin" && fieldPassword.text.toString() == "123")
-                startActivity(Intent(this, AssetsActivity::class.java))
+                startActivity(Intent(this, CabinetActivity::class.java))
         }
     }
 

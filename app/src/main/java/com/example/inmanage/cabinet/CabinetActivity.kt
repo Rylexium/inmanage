@@ -12,6 +12,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.inmanage.R
+import com.example.inmanage.cabinet.activity.AssetsActivity
+import com.example.inmanage.cabinet.activity.BalanceActivity
+import com.example.inmanage.cabinet.activity.LiabilitiesActivity
 import com.example.inmanage.cabinet.fragments.AssetsFragment
 import com.example.inmanage.cabinet.fragments.ProfileFragment
 import com.example.inmanage.cabinet.fragments.ReportsFragment
@@ -20,7 +23,7 @@ import com.example.inmanage.utils.HideKeyboardClass
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class AssetsActivity : AppCompatActivity() {
+class CabinetActivity : AppCompatActivity() {
     private lateinit var bottomNavigationBar : BottomNavigationView
     private lateinit var iconInTitleAssets : View
     private lateinit var textInTitleAssets : TextView
@@ -30,7 +33,7 @@ class AssetsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_assets)
+        setContentView(R.layout.activity_cabinet)
         initComponents()
         applyEvents()
         replaceFragment(fragments[1])
@@ -82,9 +85,13 @@ class AssetsActivity : AppCompatActivity() {
             val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listOfAssets)
             spinner.adapter = adapter
             spinner.onItemClickListener =
-                AdapterView.OnItemClickListener { parent, view, position, id ->
+                AdapterView.OnItemClickListener { _, _, position, _ ->
                     if(listOfAssets[position] == "Баланс")
-                        startActivity(Intent(this, BalancActivity::class.java))
+                        startActivity(Intent(this, BalanceActivity::class.java))
+                    else if(listOfAssets[position] == "Активы")
+                        startActivity(Intent(this, AssetsActivity::class.java))
+                    else if(listOfAssets[position] == "Пассивы")
+                        startActivity(Intent(this, LiabilitiesActivity::class.java))
                     dialog.dismiss()
                 }
         }

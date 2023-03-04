@@ -13,16 +13,30 @@
         android:theme="@style/Theme.InManage"
         tools:targetApi="31">
         <activity
-            android:name=".cabinet.BalancActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"
+            android:name=".cabinet.activity.AssetsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".cabinet.AssetsActivity"
+            android:name=".cabinet.activity.LiabilitiesActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".cabinet.activity.BalanceActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".cabinet.CabinetActivity"
             android:exported="false"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
