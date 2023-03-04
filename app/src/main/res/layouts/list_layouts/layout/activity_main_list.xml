@@ -34,6 +34,7 @@
         android:layout_height="match_parent"
         android:paddingBottom="@dimen/height_bottom_navigation_bar"
         app:defaultNavHost="true"
+        android:layout_marginTop="30sp"
         app:layout_constraintBottom_toTopOf="@id/fragment_container_cabinet"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

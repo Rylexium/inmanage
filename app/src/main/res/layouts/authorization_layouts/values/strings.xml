@@ -1,1 +1,3 @@
-<resources></resources>
+<resources>
+    <string name="statistics_interval"><u>месяц:</u></string>
+</resources>

@@ -13,6 +13,7 @@ import com.example.inmanage.cabinet.CabinetActivity
 import com.example.inmanage.cabinet.adapters.AssetsAdapter
 import com.example.inmanage.cabinet.list.MainListActivity
 import com.example.inmanage.cabinet.list.PropertyFragment
+import com.example.inmanage.cabinet.list.StatisticsFragment
 import com.example.inmanage.cabinet.model.AssetData
 import com.example.inmanage.databinding.FragmentAssetsBinding
 import com.example.inmanage.utils.GlobalVariables
@@ -41,7 +42,7 @@ class AssetsFragment : Fragment() {
     private fun initComponents() {
         val lisfOfAssets = mutableListOf(
             AssetData("Общее", R.drawable.asset_statistics) {
-                //GlobalVariables.fragment =
+                GlobalVariables.fragment = StatisticsFragment()
                 activity?.startActivity(Intent(activity, MainListActivity::class.java)
                     .putExtra("title", "Общая статистика:"))
             },
