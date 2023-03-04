@@ -22,13 +22,19 @@ class AuthorizationActivity : AppCompatActivity() {
         setContentView(R.layout.authorization_main)
         initComponents()
         applyEvents()
-        startActivity(Intent(this, CabinetActivity::class.java))
+
+        val intent = Intent(this, CabinetActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
     }
 
     private fun applyEvents() {
         buttonLogin.setOnClickListener {
-            if(fieldLogin.text.toString() == "admin" && fieldPassword.text.toString() == "123")
-                startActivity(Intent(this, CabinetActivity::class.java))
+            if(fieldLogin.text.toString() == "admin" && fieldPassword.text.toString() == "123") {
+                val intent = Intent(this, CabinetActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
         }
     }
 

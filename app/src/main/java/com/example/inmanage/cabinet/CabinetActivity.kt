@@ -13,6 +13,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.inmanage.R
+import com.example.inmanage.authorization.AuthorizationActivity
 import com.example.inmanage.cabinet.fragments.AssetsFragment
 import com.example.inmanage.cabinet.fragments.ProfileFragment
 import com.example.inmanage.cabinet.fragments.ReportsFragment
@@ -47,11 +48,16 @@ class CabinetActivity : AppCompatActivity() {
         }
         return super.dispatchTouchEvent(ev)
     }
+
     override fun onBackPressed() {
         val dialogClickListener =
             DialogInterface.OnClickListener { _, which ->
                 when (which) {
-                    DialogInterface.BUTTON_POSITIVE -> { super.onBackPressed() }
+                    DialogInterface.BUTTON_POSITIVE -> {
+                        val intent = Intent(this, AuthorizationActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    }
                     DialogInterface.BUTTON_NEGATIVE -> {}
                 }
             }
@@ -67,8 +73,19 @@ class CabinetActivity : AppCompatActivity() {
         textInTitleAssets = findViewById(R.id.text_in_title_assets)
 
         bottomNavigationBar = findViewById(R.id.bottom_navigation)
-        bottomNavigationBar.selectedItemId = R.id.button_balance
-        replaceFragment(fragments[pastIndex], pastIndex, 0)
+
+        pastIndex = intent.getIntExtra("selectedFragment", 1)
+        val selectedItem = intent.getIntExtra("selectedItemId", -1)
+        if(pastIndex != 1 && selectedItem != -1) { //не впервый запустили
+            bottomNavigationBar.selectedItemId = R.id.button_balance
+            replaceFragment(fragments[pastIndex], pastIndex, 1)
+            bottomNavigationBar.selectedItemId = selectedItem
+        }
+        else { //впервые запустили идём сюда
+            replaceFragment(fragments[pastIndex], pastIndex, 0)
+            bottomNavigationBar.selectedItemId = R.id.button_balance
+        }
+
     }
 
     private fun applyEvents() {
