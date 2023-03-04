@@ -10,12 +10,11 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import com.example.inmanage.R
-import com.example.inmanage.cabinet.activity.AssetsActivity
-import com.example.inmanage.cabinet.activity.BalanceActivity
-import com.example.inmanage.cabinet.activity.LiabilitiesActivity
+import com.example.inmanage.cabinet.title.AssetsActivity
+import com.example.inmanage.cabinet.title.BalanceActivity
+import com.example.inmanage.cabinet.title.LiabilitiesActivity
 import com.example.inmanage.cabinet.fragments.AssetsFragment
 import com.example.inmanage.cabinet.fragments.ProfileFragment
 import com.example.inmanage.cabinet.fragments.ReportsFragment

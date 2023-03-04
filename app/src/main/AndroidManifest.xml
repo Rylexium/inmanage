@@ -13,21 +13,39 @@
         android:theme="@style/Theme.InManage"
         tools:targetApi="31">
         <activity
-            android:name=".cabinet.activity.AssetsActivity"
+            android:name=".StatisticsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".cabinet.activity.LiabilitiesActivity"
+            android:name=".PropertyActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".cabinet.activity.BalanceActivity"
+            android:name=".cabinet.title.AssetsActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".cabinet.title.LiabilitiesActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".cabinet.title.BalanceActivity"
             android:exported="false"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">

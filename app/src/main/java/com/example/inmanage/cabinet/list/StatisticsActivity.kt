@@ -1,12 +1,12 @@
-package com.example.inmanage.cabinet.activity
+package com.example.inmanage.cabinet.list
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.inmanage.R
 
-class AssetsActivity : AppCompatActivity() {
+class StatisticsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_assets)
+        setContentView(R.layout.activity_statistics)
     }
 }

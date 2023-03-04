@@ -30,10 +30,10 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="23sp"
-                android:layout_marginStart="40sp"
+                android:layout_marginStart="30sp"
                 android:layout_gravity="bottom"
                 android:gravity="left"
-                android:paddingBottom="18dp"
+                android:paddingBottom="15sp"
                 android:layout_weight="0.75"
                 />
             <ImageView

@@ -1,12 +1,12 @@
-package com.example.inmanage.cabinet.activity
+package com.example.inmanage.cabinet.title
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.inmanage.R
 
-class BalanceActivity : AppCompatActivity() {
+class LiabilitiesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_balance)
+        setContentView(R.layout.activity_liabilities)
     }
 }
