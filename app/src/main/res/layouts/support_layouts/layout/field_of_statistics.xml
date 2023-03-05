@@ -76,7 +76,7 @@
                 android:autoSizeMaxTextSize="100sp"
                 android:autoSizeStepGranularity="4sp"
                 android:gravity="center|right"
-                android:layout_gravity="center"
+                android:layout_gravity="center|right"
                 />
 
         </LinearLayout>
@@ -183,9 +183,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:paddingTop="10dp"
-                        >
+                        />
 
-                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

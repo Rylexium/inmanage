@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/text_custom_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fdas"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:paddingStart="10sp"
+        android:paddingEnd="20sp"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:layout_marginEnd="10sp"
+        android:foreground="?attr/selectableItemBackground"
+        />
+</LinearLayout>

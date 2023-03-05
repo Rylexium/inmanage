@@ -1,22 +1,30 @@
 package com.example.inmanage.cabinet.list
 
-import android.R
+import android.animation.LayoutTransition
 import android.content.Context
+import android.graphics.Color
+import android.graphics.Paint
 import android.os.Bundle
-import android.util.TypedValue
+import android.text.SpannableString
+import android.text.style.UnderlineSpan
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.inmanage.R
 import com.example.inmanage.cabinet.adapters.StatisticsAdapter
 import com.example.inmanage.cabinet.model.StatisticsData
 import com.example.inmanage.databinding.FragmentStatisticsBinding
+import kotlin.random.Random
 
 
-class StatisticsFragment: Fragment() {
+class StatisticsFragment : Fragment() {
     private var _binding: FragmentStatisticsBinding? = null
     private val binding get() = _binding!!
 
@@ -34,6 +42,34 @@ class StatisticsFragment: Fragment() {
 
     private fun applyEvents() {
         binding.textOfInterval.setOnClickListener {
+            it.visibility = View.GONE
+
+            binding.customSpinnerInterval.visibility = View.VISIBLE
+
+
+            if(binding.customSpinnerInterval.childCount == 0) {
+                val list = mutableListOf("месяц", "квартал", "год")
+                for (item in list) {
+                    val inflater = activity?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                    print(inflater)
+                    val rowView = inflater.inflate(R.layout.custom_line, null)
+                    print(rowView)
+                    val text = rowView.findViewById<TextView>(R.id.text_custom_line)
+                    print(text)
+                    text.text = item
+
+                    text.setOnClickListener {
+                        val mSpannableString = SpannableString(text.text)
+                        mSpannableString.setSpan(UnderlineSpan(), 0, mSpannableString.length, 0)
+
+                        binding.textOfInterval.text = mSpannableString
+                        binding.textOfInterval.visibility = View.VISIBLE
+                        binding.customSpinnerInterval.visibility = View.GONE
+                    }
+
+                    binding.customSpinnerInterval.addView(rowView)
+                }
+            }
 
         }
     }
