@@ -10,6 +10,9 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.inmanage.cabinet.adapters.StatisticsAdapter
+import com.example.inmanage.cabinet.model.StatisticsData
 import com.example.inmanage.databinding.FragmentStatisticsBinding
 
 
@@ -32,12 +35,18 @@ class StatisticsFragment: Fragment() {
     private fun applyEvents() {
         binding.textOfInterval.setOnClickListener {
 
-
         }
     }
 
     private fun initComponents() {
-
+        val lisfOfStatistics = mutableListOf(
+            StatisticsData("Гавно", "150 000 P"),
+            StatisticsData("Жопа", "215 000 P"),
+            StatisticsData("Пидр", "56 000 P"),
+            StatisticsData("Хуй", "2 000 P"),
+        )
+        binding.recyclerViewStatistics.adapter = StatisticsAdapter(this, lisfOfStatistics)
+        binding.recyclerViewStatistics.layoutManager = LinearLayoutManager(activity)
     }
 
 

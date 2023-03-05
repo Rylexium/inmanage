@@ -5,54 +5,189 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:weightSum="1"
-    android:paddingStart="8sp"
-    android:paddingEnd="8dp"
     android:paddingBottom="15dp"
     >
 
-    <TextView
-        android:layout_width="140dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Доход от продажи гавна:"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:autoSizeTextType="uniform"
-        android:autoSizeMinTextSize="12sp"
-        android:autoSizeMaxTextSize="100sp"
-        android:autoSizeStepGranularity="3sp"
-        />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:cardCornerRadius="13dp"
-        app:cardElevation="5dp"
-        app:cardBackgroundColor="@color/darkest_grey"
-        android:foreground="?attr/selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         >
-        <View
+        <LinearLayout
+            android:id="@+id/short_info_ll_field_of_statistics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10sp"
+            android:orientation="horizontal"
+            android:paddingStart="8sp"
+            android:paddingEnd="8dp"
+            android:weightSum="1"
+            android:visibility="visible"
+            >
+            <TextView
+                android:id="@+id/short_info_description_field_of_statistics"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Гавно:"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="100sp"
+                android:autoSizeStepGranularity="3sp"
+                android:gravity="left|center"
+                android:layout_gravity="center"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/short_info_icon_field_of_statistics"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/darkest_grey"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                >
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6sp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    android:rotation="270"
+                    />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/short_info_price_field_of_statistics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="213 192 168 300 P"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="100sp"
+                android:autoSizeStepGranularity="4sp"
+                android:gravity="center|right"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/more_info_ll_field_of_statistics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="@color/darkest_grey"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_gravity="center"
-            android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
-            android:rotation="270"
-            />
-    </androidx.cardview.widget.CardView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="213 192 168 300 P"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:autoSizeTextType="uniform"
-        android:autoSizeMinTextSize="12sp"
-        android:autoSizeMaxTextSize="100sp"
-        android:autoSizeStepGranularity="3sp"
-        />
+            android:visibility="invisible"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="8sp"
+                    android:paddingEnd="8dp"
+                    android:weightSum="1"
+                    >
+                    <TextView
+                        android:id="@+id/more_info_description_field_of_statistics"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Доход от продажи гавна гавном:"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="12sp"
+                        android:autoSizeMaxTextSize="100sp"
+                        android:autoSizeStepGranularity="3sp"
+                        android:gravity="left|center"
+                        android:layout_gravity="center"
+                        />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/more_info_icon_field_of_statistics"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/darkest_grey"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_gravity="center"
+                        >
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="6sp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
+                            android:rotation="90"
+                            />
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/more_info_price_field_of_statistics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="213 192 168 300 P"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="10sp"
+                        android:autoSizeMaxTextSize="100sp"
+                        android:autoSizeStepGranularity="4sp"
+                        android:gravity="center|right"
+                        android:layout_gravity="center"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/more_info_body_statistics"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="250dp">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/asset_statistics"
+                        android:scaleType="centerCrop"
+                        android:padding="5dp"
+                        />
+                    <LinearLayout
+                        android:id="@+id/more_info_in_body_field_of_statistics"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        >
+                        <include layout="@layout/line_of_statistics" />
+                        <include layout="@layout/line_of_statistics" />
+                        <include layout="@layout/line_of_statistics" />
+                        <include layout="@layout/line_of_statistics" />
+                        <include layout="@layout/line_of_statistics" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
 </LinearLayout>
