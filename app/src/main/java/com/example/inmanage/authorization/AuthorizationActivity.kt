@@ -23,9 +23,9 @@ class AuthorizationActivity : AppCompatActivity() {
         initComponents()
         applyEvents()
 
-        val intent = Intent(this, CabinetActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        startActivity(intent)
+//        val intent = Intent(this, CabinetActivity::class.java)
+//        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//        startActivity(intent)
     }
 
     private fun applyEvents() {
