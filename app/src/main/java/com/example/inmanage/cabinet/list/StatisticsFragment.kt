@@ -40,10 +40,10 @@ class StatisticsFragment: Fragment() {
 
     private fun initComponents() {
         val lisfOfStatistics = mutableListOf(
-            StatisticsData("Гавно", "150 000 P"),
-            StatisticsData("Жопа", "215 000 P"),
-            StatisticsData("Пидр", "56 000 P"),
-            StatisticsData("Хуй", "2 000 P"),
+            StatisticsData("Доход:", "150 000 P"),
+            StatisticsData("Расход:", "75 000 P"),
+            StatisticsData("Сальдо:", "56 000 P"),
+            StatisticsData("Стоимость рабочего часа:", "4 000 P"),
         )
         binding.recyclerViewStatistics.adapter = StatisticsAdapter(this, lisfOfStatistics)
         binding.recyclerViewStatistics.layoutManager = LinearLayoutManager(activity)
