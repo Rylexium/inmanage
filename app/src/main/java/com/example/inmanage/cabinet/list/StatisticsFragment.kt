@@ -51,11 +51,8 @@ class StatisticsFragment : Fragment() {
                 val list = mutableListOf("месяц", "квартал", "год")
                 for (item in list) {
                     val inflater = activity?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                    print(inflater)
                     val rowView = inflater.inflate(R.layout.custom_line, null)
-                    print(rowView)
                     val text = rowView.findViewById<TextView>(R.id.text_custom_line)
-                    print(text)
                     text.text = item
 
                     text.setOnClickListener {
